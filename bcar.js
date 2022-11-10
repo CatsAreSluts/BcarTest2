@@ -25,10 +25,6 @@ var bcModSdk=function(){"use strict";const o="1.0.2";function e(o){alert("Mod ER
                 [" purrs softly, twitching their ears.", " twitches their ears, purring loudly as their ears are toyed with.",
                 " twitches their ears, purring loudly as their ears are toyed with.", " squirms, twitches their ears and purrs.",
                 " wiggles and twitches their ears purring softly."]], // actions // order matters, match sound with action
-                EarNibble :
-                [["","",""],
-                ["", "",
-                ""]],
                 EarLick :
                 [["","",""],
                 [" moans softly and twitches their ears as it's licked.", " wiggles and twitches their ears caused by the licking.",
@@ -44,15 +40,7 @@ var bcModSdk=function(){"use strict";const o="1.0.2";function e(o){alert("Mod ER
                 [["","","",""],
                 [" purrs softly and twitches their ears.", " purrs happily and twitches their ears.",
                  " purrs softly, twitches their ears and nuzzles into the pat."," purrs happily, twitches their ears and nuzzles into the pat."]],
-                CaressBack :
-                [["",""],
-                ["", ""]],
-                MassageBack :
-                [[""],
-                [""]],
-                CaressButt :
-                [[""],
-                [""]],
+             
         }
 
     function ActivityBeeper(type,nya){
@@ -126,18 +114,6 @@ var bcModSdk=function(){"use strict";const o="1.0.2";function e(o){alert("Mod ER
                   ActivityChatRoomArousalSync(Player);
 
               }
-              else if (data.Content.indexOf("Nibble") !== -1) {
-                  let nya = Math.floor(Math.random() * 3);
-                  console.log(nya)
-                  ActivityBeeper("EarNibble",nya);
-
-                  setTimeout(EarWiggle);
-                  Player.BCT.splitOrgasmArousal.arousalProgress = 100;
-                  Player.ArousalSettings.ProgressTimer = Player.ArousalSettings.Progress + 10;
-                  ActivityChatRoomBCTArousalSync(Player);
-                  ActivityChatRoomArousalSync(Player);
-
-              }
               else if (data.Content.indexOf("Lick") !== -1) {
                   let nya = Math.floor(Math.random() * 3);
                   console.log(nya)
@@ -182,37 +158,6 @@ var bcModSdk=function(){"use strict";const o="1.0.2";function e(o){alert("Mod ER
                 ActivityChatRoomArousalSync(Player);
             }
         }
-	else if ((data.Content.startsWith("ChatOther-ItemTorso") || (data.Content.startsWith("ChatSelf-ItemTorso") === -1))) {
-            if (data.Content.indexOf("Caress") !== -1) {
-                let nya = Math.floor(Math.random() * 1);
-                console.log(nya)
-                ActivityBeeper("CaressBack",nya);
-
-                setTimeout(TailWag);
-                Player.ArousalSettings.ProgressTimer = Player.ArousalSettings.Progress + 2;
-                ActivityChatRoomArousalSync(Player);
-            }
-            else if (data.Content.indexOf("MassageHands") !== -1) {
-                let nya = Math.floor(Math.random() * 1);
-                console.log(nya)
-                ActivityBeeper("MassageBack",nya);
-
-                setTimeout(TailWag);
-                Player.ArousalSettings.ProgressTimer = Player.ArousalSettings.Progress + 2;
-                ActivityChatRoomArousalSync(Player);
-            }
-        }
-	else if ((data.Content.startsWith("ChatOther-ItemButt") || (data.Content.startsWith("ChatSelf-ItemButt") === -1))) {
-            if (data.Content.indexOf("Caress") !== -1) {
-                let nya = Math.floor(Math.random() * 1);
-                console.log(nya)
-                ActivityBeeper("CaressButt",nya);
-
-                setTimeout(TailWag);
-                Player.ArousalSettings.ProgressTimer = Player.ArousalSettings.Progress + 5;
-                ActivityChatRoomArousalSync(Player);
-            }
-	}
 
 
     }
