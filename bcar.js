@@ -188,7 +188,7 @@ var bcModSdk=function(){"use strict";const o="1.0.2";function e(o){alert("Mod ER
     async function bcarSettingsLoad() {
 		await waitFor(() => !!Player?.AccountName);
         const BCAR_DEFAULT_SETTINGS = {
-	    earWigglingEnable : true,
+	    earWigglingEnable : false,
             earsDefault : {
                 "ears1" : "KittenEars1", // change based on ear type
                 "ears2" : "FoxEars2",
@@ -197,7 +197,7 @@ var bcModSdk=function(){"use strict";const o="1.0.2";function e(o){alert("Mod ER
                 "earsCount" : 12, // no. of ear wiggles
                 "earsDelay" : 175, // delay in ms
             },
-             tailWaggingEnable : true,
+             tailWaggingEnable : false,
              tailsDefault : {
                 "tails1" : "KittenTailStrap1", // change based on tail type
                 "tails2" : "MouseTailStrap1",
