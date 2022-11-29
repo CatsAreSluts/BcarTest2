@@ -68,9 +68,9 @@ var bcModSdk=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         let delay = parseInt(Player.BCAR.bcarSettings.earsDefault.earsDelay);
         for(let i=0; i < numberWiggles; i++)
         {
-          // setTimeout(function() {
-             // InventoryWear(Player, earsVariations[i%earsVariations.length], "HairAccessory2", earsColor[i%earsColor.length]);
-             // ChatRoomCharacterItemUpdate(Player, "HairAccessory2");
+           setTimeout(function() {
+              InventoryWear(Player, earsVariations[i%earsVariations.length], "HairAccessory2", earsColor[i%earsColor.length]);
+              ChatRoomCharacterItemUpdate(Player, "HairAccessory2");
          }, i * delay);
      }
    }
