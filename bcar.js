@@ -63,7 +63,7 @@ var bcModSdk=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
      function EarWiggle(){
       if(Player.BCAR.bcarSettings.earWigglingEnable === true){
         let earsVariations = [Player.BCAR.bcarSettings.earsDefault.ears2,Player.BCAR.bcarSettings.earsDefault.ears1];
-        //let earsColor = [Player.BCAR.bcarSettings.earsDefault.earsColor2,Player.BCAR.bcarSettings.earsDefault.earsColor1];
+        let earsColor = [Player.BCAR.bcarSettings.earsDefault.earsColor2,Player.BCAR.bcarSettings.earsDefault.earsColor1];
         let numberWiggles= parseInt(Player.BCAR.bcarSettings.earsDefault.earsCount);
         let delay = parseInt(Player.BCAR.bcarSettings.earsDefault.earsDelay);
         for(let i=0; i < numberWiggles; i++)
