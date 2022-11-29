@@ -30,16 +30,20 @@ var bcModSdk=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
   //Functions
 
     const typeAction = { EarCaress :
-                [["","","","",""], // sounds
+                [["Mnyaa~","Nnyaaaaah~","Nnyaaaaah~","Nnyaa~","Nyaa~"], // sounds
                 [" purrs softly, twitching " + Player.BCAR.bcarSettings.genderDefault.possessive + " ears.", " twitches " + Player.BCAR.bcarSettings.genderDefault.possessive + " ears, purring loudly as " + Player.BCAR.bcarSettings.genderDefault.possessive + " ears are toyed with.",
                 " twitches " + Player.BCAR.bcarSettings.genderDefault.possessive + " ears, purring loudly as " + Player.BCAR.bcarSettings.genderDefault.possessive + " ears are toyed with.", " squirms, twitches " + Player.BCAR.bcarSettings.genderDefault.possessive + " ears and purrs.",
                 " wiggles and twitches " + Player.BCAR.bcarSettings.genderDefault.possessive + " ears purring softly."]], // actions // order matters, match sound with action
+                EarNibble :
+                [["Mnyaa~","Nnyaa~","Nnyaaaaah~"],
+                [" moans softly and twitches " + Player.BCAR.bcarSettings.genderDefault.possessive + " ears as it's nibbled.", " wiggles and twitches " + Player.BCAR.bcarSettings.genderDefault.possessive + " ears between the teeth.",
+                " moans softly, twitching " + Player.BCAR.bcarSettings.genderDefault.possessive + " ears as it's nibbled."]],
                 EarLick :
-                [["","",""],
+                [["Mnyaa~","Nnyaa~","Nnyaaaaah~"],
                 [" moans softly and twitches " + Player.BCAR.bcarSettings.genderDefault.possessive + " ears as it's licked.", " wiggles and twitches " + Player.BCAR.bcarSettings.genderDefault.possessive + " ears caused by the licking.",
                 " moans softly, twitching " + Player.BCAR.bcarSettings.genderDefault.possessive + "r ears as it's licked."]],
                 EarKiss :
-                [["","",""],
+                [["Mnyaa~","Nnyaa~","Nnyaaaaah~"],
                 [" moans softly and twitches " + Player.BCAR.bcarSettings.genderDefault.possessive + " ears as it's kissed.", " wiggles and twitches " + Player.BCAR.bcarSettings.genderDefault.possessive + " ears caused by the kissing.",
                 " moans softly, twitching " + Player.BCAR.bcarSettings.genderDefault.possessive + " ears as it's kissed."]],
                 HeadBrush :
@@ -49,10 +53,18 @@ var bcModSdk=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                 [["","","",""],
                 [" purrs softly and twitches " + Player.BCAR.bcarSettings.genderDefault.possessive + " ears.", " purrs happily and twitches " + Player.BCAR.bcarSettings.genderDefault.possessive + " ears.",
                  " purrs softly, twitches " + Player.BCAR.bcarSettings.genderDefault.possessive + " ears and nuzzles into the pat."," purrs happily, twitches " + Player.BCAR.bcarSettings.genderDefault.possessive + " ears and nuzzles into the pat."]],
-             
+                CaressBack :
+                [["",""],
+                [" purrs softly and wags " + Player.BCAR.bcarSettings.genderDefault.possessive + " tail.", " purrs softly, arches " + Player.BCAR.bcarSettings.genderDefault.possessive + " back and wags " + Player.BCAR.bcarSettings.genderDefault.possessive + " tail."]],
+                MassageBack :
+                [[""],
+                [" purrs softly and wags " + Player.BCAR.bcarSettings.genderDefault.possessive + " tail."]],
+                CaressButt :
+                [["Mnyaa~"],
+                [" purrs softly, wiggles " + Player.BCAR.bcarSettings.genderDefault.possessive + " butt and wags " + Player.BCAR.bcarSettings.genderDefault.possessive + " tail."]],
         }
 
-   function ActivityBeeper(type,nya){
+    function ActivityBeeper(type,nya){
         retype = ElementValue("InputChat");
         ServerSend("ChatRoomChat", { Content: "Beep", Type: "Action", Dictionary: [{Tag: "Beep", Text: CharacterNickname(Player) + typeAction[type][1][nya] }]});
         ElementValue("InputChat",typeAction[type][0][nya]);
